@@ -8,13 +8,18 @@ LuxuryWebV1/App_Data/
 LuxuryWebV1/bin/*
 !/LuxuryWebV1/bin/roslyn/
 
+# Object explorer 
+obj/*/*.dll
+obj/*/*.pdb
+
 # Private config 
 LuxuryWebV1/Web.config
 LuxuryWebV1/Web.Debug.config
 LuxuryWebV1/Web.Release.config 
 
-# Resources folder of Pictures
+# Resources folder of Pictures & SQL Test case
 LuxuryWebV1/Resources/Pictures/
+LuxuryWebV1/Resources/Query/TestCase.sql
 # Test place & Test result 
 LuxuryWebV1/Test
 LuxuryWebV1/TestResult
