@@ -321,6 +321,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Resources\Pictures\" />
+    <Folder Include="Resources\Query\" />
+    <Folder Include="Resources\Scripts\" />
+    <Folder Include="Resources\Styles\" />
     <Folder Include="Views\Person\" />
   </ItemGroup>
   <ItemGroup>
