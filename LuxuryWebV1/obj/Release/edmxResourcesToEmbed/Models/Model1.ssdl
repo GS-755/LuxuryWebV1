@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LuxuryDBv3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="char" MaxLength="24" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="IDRole" Type="int" Nullable="false" />
+    <Property Name="IDStaff" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'LuxuryDBv3.dbo.Balance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Balance">
+    <Key>
+      <PropertyRef Name="CurrentBalance" />
+    </Key>
+    <Property Name="CurrentBalance" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="IDCate" />
+    </Key>
+    <Property Name="IDCate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HairServices">
+    <Key>
+      <PropertyRef Name="IDSvc" />
+    </Key>
+    <Property Name="IDSvc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="255" />
+    <Property Name="IDCate" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MakeSteps">
+    <Key>
+      <PropertyRef Name="IDSteps" />
+    </Key>
+    <Property Name="IDSteps" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Steps" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="IDSvc" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderIncomes">
+    <Key>
+      <PropertyRef Name="IDSvc" />
+      <PropertyRef Name="IDOrder" />
+    </Key>
+    <Property Name="TotalPrice" Type="float" Nullable="false" />
+    <Property Name="IDSvc" Type="int" Nullable="false" />
+    <Property Name="IDOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="IDOrder" />
+    </Key>
+    <Property Name="IDOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOrder" Type="date" Nullable="false" />
+    <Property Name="IDStaff" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Revenue">
+    <Key>
+      <PropertyRef Name="IDRevenue" />
+    </Key>
+    <Property Name="IDRevenue" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateAccessed" Type="float" Nullable="false" />
+    <Property Name="IDType" Type="int" Nullable="false" />
+    <Property Name="IDStaff" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RevenueType">
+    <Key>
+      <PropertyRef Name="IDType" />
+    </Key>
+    <Property Name="IDType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="IDRole" />
+    </Key>
+    <Property Name="IDRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="IDStaff" />
+    </Key>
+    <Property Name="IDStaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DoB" Type="date" Nullable="false" />
+    <Property Name="Phone" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CurrentSalary" Type="float" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Account__IDRole__4BAC3F29">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="IDRole" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Account__IDStaff__4CA06362">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="IDStaff" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="IDStaff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HairServi__IDCat__398D8EEE">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="HairServices" Type="Self.HairServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="IDCate" />
+      </Principal>
+      <Dependent Role="HairServices">
+        <PropertyRef Name="IDCate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MakeSteps__IDSvc__3E52440B">
+    <End Role="HairServices" Type="Self.HairServices" Multiplicity="0..1" />
+    <End Role="MakeSteps" Type="Self.MakeSteps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HairServices">
+        <PropertyRef Name="IDSvc" />
+      </Principal>
+      <Dependent Role="MakeSteps">
+        <PropertyRef Name="IDSvc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderInco__IDOrd__5070F446">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderIncomes" Type="Self.OrderIncomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="IDOrder" />
+      </Principal>
+      <Dependent Role="OrderIncomes">
+        <PropertyRef Name="IDOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderInco__IDSvc__4F7CD00D">
+    <End Role="HairServices" Type="Self.HairServices" Multiplicity="1" />
+    <End Role="OrderIncomes" Type="Self.OrderIncomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HairServices">
+        <PropertyRef Name="IDSvc" />
+      </Principal>
+      <Dependent Role="OrderIncomes">
+        <PropertyRef Name="IDSvc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__IDStaff__48CFD27E">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="IDStaff" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="IDStaff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Revenue__IDStaff__45F365D3">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Revenue" Type="Self.Revenue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="IDStaff" />
+      </Principal>
+      <Dependent Role="Revenue">
+        <PropertyRef Name="IDStaff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Revenue__IDType__44FF419A">
+    <End Role="RevenueType" Type="Self.RevenueType" Multiplicity="1" />
+    <End Role="Revenue" Type="Self.Revenue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RevenueType">
+        <PropertyRef Name="IDType" />
+      </Principal>
+      <Dependent Role="Revenue">
+        <PropertyRef Name="IDType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LuxuryDBv3ModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HairServices" EntityType="Self.HairServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MakeSteps" EntityType="Self.MakeSteps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderIncomes" EntityType="Self.OrderIncomes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Revenue" EntityType="Self.Revenue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RevenueType" EntityType="Self.RevenueType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Balance" EntityType="Self.Balance" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Balance].[CurrentBalance] AS [CurrentBalance]
+    FROM [dbo].[Balance] AS [Balance]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Account__IDRole__4BAC3F29" Association="Self.FK__Account__IDRole__4BAC3F29">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Account__IDStaff__4CA06362" Association="Self.FK__Account__IDStaff__4CA06362">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HairServi__IDCat__398D8EEE" Association="Self.FK__HairServi__IDCat__398D8EEE">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="HairServices" EntitySet="HairServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MakeSteps__IDSvc__3E52440B" Association="Self.FK__MakeSteps__IDSvc__3E52440B">
+      <End Role="HairServices" EntitySet="HairServices" />
+      <End Role="MakeSteps" EntitySet="MakeSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderInco__IDOrd__5070F446" Association="Self.FK__OrderInco__IDOrd__5070F446">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderIncomes" EntitySet="OrderIncomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderInco__IDSvc__4F7CD00D" Association="Self.FK__OrderInco__IDSvc__4F7CD00D">
+      <End Role="HairServices" EntitySet="HairServices" />
+      <End Role="OrderIncomes" EntitySet="OrderIncomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__IDStaff__48CFD27E" Association="Self.FK__Orders__IDStaff__48CFD27E">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Revenue__IDStaff__45F365D3" Association="Self.FK__Revenue__IDStaff__45F365D3">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Revenue" EntitySet="Revenue" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Revenue__IDType__44FF419A" Association="Self.FK__Revenue__IDType__44FF419A">
+      <End Role="RevenueType" EntitySet="RevenueType" />
+      <End Role="Revenue" EntitySet="Revenue" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="LuxuryDBv3Entities-Web.config Connection String" description="LuxuryDBv3Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.40.128;initial catalog=LuxuryDBv3;persist security info=True;user id=sa;password=Mstar@1709.vn;encrypt=False;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Project\\LuxuryBarber\\LuxuryWebV1\\LuxuryWebV1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LuxuryDBv3Entities']/@connectionString" />
+  </parameter>
+</parameters>

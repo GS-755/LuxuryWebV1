@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6890756c712b4ef5bd77b0aad9b331d0" Name="Diagram1">
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Account" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Category" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.HairServices" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.MakeSteps" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.OrderIncomes" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Orders" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Revenue" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.RevenueType" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Roles" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Staff" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LuxuryDBv3Model.Balance" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__Account__IDRole__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__Account__IDStaff__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__HairServi__IDCat__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__MakeSteps__IDSvc__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__OrderInco__IDSvc__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__OrderInco__IDOrd__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__Orders__IDStaff__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__Revenue__IDStaff__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="LuxuryDBv3Model.FK__Revenue__IDType__44FF419A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

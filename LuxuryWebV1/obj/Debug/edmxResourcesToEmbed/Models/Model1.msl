@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LuxuryDBv3ModelStoreContainer" CdmEntityContainer="LuxuryDBv3Entities">
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="IDCate" ColumnName="IDCate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HairServices">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.HairServices">
+        <MappingFragment StoreEntitySet="HairServices">
+          <ScalarProperty Name="IDSvc" ColumnName="IDSvc" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="IDCate" ColumnName="IDCate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MakeSteps">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.MakeSteps">
+        <MappingFragment StoreEntitySet="MakeSteps">
+          <ScalarProperty Name="IDSteps" ColumnName="IDSteps" />
+          <ScalarProperty Name="Steps" ColumnName="Steps" />
+          <ScalarProperty Name="IDSvc" ColumnName="IDSvc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderIncomes">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.OrderIncomes">
+        <MappingFragment StoreEntitySet="OrderIncomes">
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="IDSvc" ColumnName="IDSvc" />
+          <ScalarProperty Name="IDOrder" ColumnName="IDOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="IDOrder" ColumnName="IDOrder" />
+          <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
+          <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Revenue">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Revenue">
+        <MappingFragment StoreEntitySet="Revenue">
+          <ScalarProperty Name="IDRevenue" ColumnName="IDRevenue" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DateAccessed" ColumnName="DateAccessed" />
+          <ScalarProperty Name="IDType" ColumnName="IDType" />
+          <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RevenueType">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.RevenueType">
+        <MappingFragment StoreEntitySet="RevenueType">
+          <ScalarProperty Name="IDType" ColumnName="IDType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="DoB" ColumnName="DoB" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CurrentSalary" ColumnName="CurrentSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Balance">
+      <EntityTypeMapping TypeName="LuxuryDBv3Model.Balance">
+        <MappingFragment StoreEntitySet="Balance">
+          <ScalarProperty Name="CurrentBalance" ColumnName="CurrentBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
