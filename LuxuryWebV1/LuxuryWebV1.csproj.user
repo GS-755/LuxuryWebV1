@@ -20,6 +20,7 @@
     <WebStackScaffolding_DbContextTypeFullName>LuxuryWebV1.Models.LuxuryDBv3Entities</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
     <NameOfLastUsedPublishProfile>E:\Project\LuxuryBarber\LuxuryWebV1\LuxuryWebV1\Properties\PublishProfiles\IISProfile.pubxml</NameOfLastUsedPublishProfile>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
